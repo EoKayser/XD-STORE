@@ -7,12 +7,16 @@
 
 # Headers para cache
 [[headers]]
-  for = "/*"
+  for = "/css/*"
   [headers.values]
     Cache-Control = "public, max-age=3600"
 
-# Redirecionar 404s para index.html para Single Page Application
-[[redirects]]
-  from = "/*"
-  to = "/index.html"
-  status = 200
+[[headers]]
+  for = "/js/*"
+  [headers.values]
+    Cache-Control = "public, max-age=3600"
+
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=86400"
