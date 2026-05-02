@@ -1,0 +1,18 @@
+# Configuração do Netlify para XD Store
+
+# Pasta que contém os arquivos estáticos a servirem
+[build]
+  publish = "."
+  command = "echo 'Site estático, nenhum build necessário'"
+
+# Headers para cache
+[[headers]]
+  for = "/*"
+  [headers.values]
+    Cache-Control = "public, max-age=3600"
+
+# Redirecionar 404s para index.html para Single Page Application
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
